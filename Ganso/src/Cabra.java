@@ -15,7 +15,7 @@ public class Cabra {
     boolean var5 = true;
 
     public static void main(String[] args) {
-        exe6();
+        exe16();
 
     }
 
@@ -126,25 +126,24 @@ public class Cabra {
         Scanner in = new Scanner (System.in);
         System.out.println("Informe o custo de fabrica");
         Double custofabrica = in.nextDouble();
-        Double porcentagemdistribuidor = 28.0;
-        Double porcentagemimpostos = 45.0;
-        Double custofinal = custofabrica + custofabrica * porcentagemdistribuidor / 100 + custofabrica * porcentagemimpostos / 100;
-        System.out.printf("%.2f", custofinal);
+        Double custofinal = custofabrica + ((custofabrica * 28) / 100) + ((custofabrica * 45) / 100);
+        System.out.printf("Custo Final: R$%.2f", custofinal);
 
     }
 
     public static void exe8() {
         Scanner in = new Scanner (System.in);
         System.out.println("Informe seu salário fixo por mês");
-        int saláriofixo = in.nextInt();
+        Double saláriofixo = in.nextDouble();
         System.out.println("Informe valor recebido por cada carro vendido");
-        int valorporcarro = in.nextInt();
+        Double valorporcarro = in.nextDouble();
         System.out.println("Informe o valor total de suas vendas");
-        int valortotalvendas = in.nextInt();
+        Double valortotalvendas = in.nextDouble();
         System.out.println("Informe a quantidade de carros vendidos");
         int quantidadecarros = in.nextInt();
-        int saláriofinal = saláriofixo + valorporcarro * quantidadecarros + valortotalvendas * 5 / 100;
-        System.out.println(saláriofinal);
+
+        Double saláriofinal = saláriofixo + valorporcarro * quantidadecarros + (valortotalvendas * 5) / 100;
+        System.out.printf("Salário Final: R$%.2f", saláriofinal);
     }
 
     public static void exe9() {
@@ -170,8 +169,103 @@ public class Cabra {
     public static void exe11() {
         Scanner in = new Scanner (System.in);
         System.out.println("Informe um valor");
+        int valor = in.nextInt();
+        if (valor > 10) {
+            System.out.printf("É MAIOR QUE 10! ");
+        }
+        if (valor <= 10) {
+            System.out.printf("NÃO É MAIOR QUE 10! ");
+        }
+
 
     }
+
+
+    public static void exe12() {
+        Scanner in = new Scanner (System.in);
+        System.out.println("Informe um valor");
+        int valor = in.nextInt();
+        if (valor >= 0) {
+            System.out.printf("Positivo");
+        }
+        if (valor < 0) {
+            System.out.printf("Negativo");
+        }
+    }
+    public static void exe13() {
+        Scanner in = new Scanner (System.in);
+        System.out.println("Informe o número de maçãs compradas");
+        int maçãscompradas = in.nextInt();
+        if (maçãscompradas < 12) {
+            System.out.println(maçãscompradas * 1.30);
+
+        }
+        if (maçãscompradas >= 12) {
+            System.out.println(maçãscompradas * 1.00);
+        }
+    }
+
+    public static void exe14() {
+        Scanner in = new Scanner (System.in);
+        System.out.println("Informe o ano atual");
+        int anoatual = in.nextInt();
+        System.out.println("Informe o seu ano de nascimento");
+        int anonascimento = in.nextInt();
+        int idadeatual = anoatual - anonascimento;
+
+        if (idadeatual >= 18) {
+            System.out.printf("Pode votar");
+        }
+
+        if (idadeatual < 18) {
+            System.out.printf("Não pode votar");
+        }
+    }
+
+    public static void exe15() {
+        Scanner in = new Scanner (System.in);
+        System.out.println("Informe valor1");
+        int valor1 = in.nextInt();
+        System.out.println("Informe valor2");
+        int valor2 = in.nextInt();
+
+        if (valor1 > valor2) {
+            System.out.println(valor1);
+        }
+
+        if (valor1 < valor2) {
+            System.out.println(valor2);
+        }
+    }
+
+    public static void exe16() {
+        Scanner in = new Scanner (System.in);
+        System.out.println("Informe valor1");
+        int valor1 = in.nextInt();
+        System.out.println("Informe valor2");
+        int valor2 = in.nextInt();
+
+        if (valor1 > valor2) {
+            System.out.println(valor2);
+            System.out.println(valor1);
+        }
+
+        if (valor1 < valor2) {
+            System.out.println(valor1);
+            System.out.println(valor2);
+        }
+    }
+
+    public static void exe17() {
+        Scanner in = new Scanner (System.in);
+        System.out.println("Informe hora de início do jogo de xadez");
+        int início = in.nextInt();
+        System.out.println("Informe hora do fim do jogo de xadez");
+        int fim = in.nextInt();
+
+        
+    }
+
     //private
     //protected
 }
