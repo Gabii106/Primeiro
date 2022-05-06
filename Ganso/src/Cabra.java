@@ -8,11 +8,18 @@ public class Cabra {
     block
     block
      */
-    static int var1 = 10;
+
+    // Inteiros
+    int var1 = 10;
+    // Decimais, números quebrados
     double var2 = 25.8;
+    // Caractere único
     char var3 = 'a';
+    // Texto
     String var4 = "abcdefghij";
+    // Valor lógico
     boolean var5 = true;
+
 
     public static void main(String[] args) {
         exe16();
