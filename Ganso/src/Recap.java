@@ -61,9 +61,10 @@ public class Recap {
 
         // entrada - entrada de usuari pelo console
         Scanner in = new Scanner(System.in);
-        in.next(); // espera o usuario digitar, pega tudo  o que foi digitado
+        in.next(); // espera o usuario digitar, pega um carcter do que foi digitado
         in.nextInt(); // espera o usuario digitar, pega valores inteiros
         in.nextDouble(); // espera o usuario digitar, pega valores decimais
+        in.nextLine(); // retora tudo o que tiver digitado, e avança o cursor
 
         // operações aritméticas
         var1 = 10 + 10;
@@ -143,15 +144,13 @@ public class Recap {
         // repetição
         // for - irá repetir um trecho do código por um determinado número de vezes
         // enquanto a condição for verdade
-        if (var4) {
-            for (int i = 0; i <= 10; i++) {
+            for (int i = 0; i < 10; i++) {
                 //código repetido a cada iteração
                 System.out.println(i);
             }
-        }
+
         // while - irá repetir um trecho do código por um número de vezes desconhecido
         // enquanto a condição for verdade
-        int i = 0;
         while (var1 != 0) {
             System.out.println("teste");
             var1 = in.nextInt(); // atualização da variável utilizada na
@@ -191,7 +190,8 @@ public class Recap {
             System.out.println(word);
         }
 
-        System.out.println(var3.substring(5, 8));
+        System.out.println(var3.substring(5, 8)); //pega um trecho do texto entre as posições,
+                                                  // inclui o primeiro número citado e exclui o segundo
 
         int[] numers = {0, 1, 2, 3, 4, 5, 6, 7, 8, 9}; // iniciando uma lista com valores
         int[] numers2 = new int[10];// iniciando lista vazia
@@ -226,7 +226,7 @@ public class Recap {
 
         int[][] mapa = {
                 {0,0,0,0,0,0,1,1},
-                {0,0,0,0,0,0,1,1},
+                {1,0,0,0,0,0,1,1},
                 {0,0,0,0,0,0,1,1},
                 {0,0,0,0,0,0,1,1},
                 {0,0,0,0,0,0,1,1},
@@ -234,6 +234,7 @@ public class Recap {
                 {0,0,0,0,0,0,1,1},
                 {0,0,0,0,0,0,1,1}
         };
+
 
 
     }
