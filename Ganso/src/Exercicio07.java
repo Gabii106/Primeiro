@@ -2,7 +2,7 @@ import java.util.Scanner;
 
 public class Exercicio07 {
     public static void main(String[] args) {
-        exe8();
+        exe7();
     }
 
     public static void exe1() {
@@ -143,96 +143,138 @@ public class Exercicio07 {
     public static void exe7() {
         //AHHHHHHHHHH!!!!!
 
-        /*
+
         Scanner in = new Scanner(System.in);
-        int[][] tabuleiro =
-        //boolean vitória = true;
+        String[][] tabuleiro = {
+                {" - ", " - ", " - "},
+                {" - ", " - ", " - "},
+                {" - ", " - ", " - "}
+        };
 
         for (int i = 0; i < tabuleiro.length; i++) {
-            for (int j = 0; j < tabuleiro.length; j++) {
+
+            for (int j = 0; j < tabuleiro[i].length; j++) {
                 System.out.print(tabuleiro[i][j]);
-                System.out.println("-");
             }
+            System.out.println("");
         }
-    }}
-/*
 
-        System.out.println("Informe um lugar para O: ");
-        int O = in.nextInt();
 
-       // if (O != -) {
+            System.out.println("Informe um lugar para O: ");
+            String O = in.nextLine();
 
-            switch (O) {
-                case 1:
-                    System.out.println(tabuleiro[1][1] = O);
-                case 2:
-                    System.out.println(tabuleiro[1][2] = O);
-                case 3:
-                    System.out.println(tabuleiro[1][3] = O);
-                case 4:
-                    System.out.println(tabuleiro[2][1] = O);
-                case 5:
-                    System.out.println(tabuleiro[2][2] = O);
-                case 6:
-                    System.out.println(tabuleiro[2][3] = O);
-                case 7:
-                    System.out.println(tabuleiro[3][1] = O);
-                case 8:
-                    System.out.println(tabuleiro[3][2] = O);
-                case 9:
-                    System.out.println(tabuleiro[3][3] = O);
-                default:
-                    System.out.println("Número inválido");
+            if (O.equals(" - ")) {
+                for (int o = 0; o < 9; o++) {
+
+                    switch (O) {
+                        case "1":
+                            System.out.println(tabuleiro[1][1] = O);
+                        case "2":
+                            System.out.println(tabuleiro[1][2] = O);
+                        case "3":
+                            System.out.println(tabuleiro[1][3] = O);
+                        case "4":
+                            System.out.println(tabuleiro[2][1] = O);
+                        case "5":
+                            System.out.println(tabuleiro[2][2] = O);
+                        case "6":
+                            System.out.println(tabuleiro[2][3] = O);
+                        case "7":
+                            System.out.println(tabuleiro[3][1] = O);
+                        case "8":
+                            System.out.println(tabuleiro[3][2] = O);
+                        case "9":
+                            System.out.println(tabuleiro[3][3] = O);
+                        default:
+                            System.out.println("Número inválido");
+                            break;
+                    }
+                    System.out.println(tabuleiro);
+                }
+
             }
-
             System.out.println("Informe um lugar para X: ");
-            int X = in.nextInt();
+            String X = in.nextLine();
 
-            switch (X) {
-                case 1:
-                    System.out.println(tabuleiro[1][1] = X);
-                case 2:
-                    System.out.println(tabuleiro[1][2] = X);
-                case 3:
-                    System.out.println(tabuleiro[1][3] = X);
-                case 4:
-                    System.out.println(tabuleiro[2][1] = X);
-                case 5:
-                    System.out.println(tabuleiro[2][2] = X);
-                case 6:
-                    System.out.println(tabuleiro[2][3] = X);
-                case 7:
-                    System.out.println(tabuleiro[3][1] = X);
-                case 8:
-                    System.out.println(tabuleiro[3][2] = X);
-                case 9:
-                    System.out.println(tabuleiro[3][3] = X);
-                default:
-                    System.out.println("Número inválido");
+            if (X.equals(" - ")) {
+                for (int x = 0; x < 9; x++) {
+
+                    switch (X) {
+                        case "1":
+                            System.out.println(tabuleiro[1][1] = X);
+                        case "2":
+                            System.out.println(tabuleiro[1][2] = X);
+                        case "3":
+                            System.out.println(tabuleiro[1][3] = X);
+                        case "4":
+                            System.out.println(tabuleiro[2][1] = X);
+                        case "5":
+                            System.out.println(tabuleiro[2][2] = X);
+                        case "6":
+                            System.out.println(tabuleiro[2][3] = X);
+                        case "7":
+                            System.out.println(tabuleiro[3][1] = X);
+                        case "8":
+                            System.out.println(tabuleiro[3][2] = X);
+                        case "9":
+                            System.out.println(tabuleiro[3][3] = X);
+                        default:
+                            System.out.println("Número inválido");
+                            break;
+                    }
+                    System.out.println(tabuleiro);
+                }
+
+
+            }}
+
+        public static void exe8() {
+            Scanner in = new Scanner(System.in);
+            System.out.println("Informe um número: ");
+            int numero = in.nextInt();
+            int soma = 0;
+
+            for (int i = 1; i <= numero; i++) {
+
+                soma += i;
             }
 
-            if (true) {
-
-            }
-
+            System.out.println(soma);
         }
 
-    }
-*/
-    }
-
-    public static void exe8() {
+    public static void exe9() {
         Scanner in = new Scanner(System.in);
-        System.out.println("Informe um número: ");
-        int numero = in.nextInt();
-        int soma = 0;
+        System.out.println("Informe seu nome completo: ");
+        String nome = in.nextLine();
 
-        for (int i = 1; i <= numero; i++) {
+        String[] nomes = nome.split(" ");
+        String out = "";
 
-            soma += i;
+        for (String n : nomes) {
+
+            out += n.charAt(0)+".";
+
         }
 
-    System.out.println(soma);
-}
+        System.out.println(out);
 
-}
+    }
+
+    public static void exe10() {
+        Scanner in = new Scanner(System.in);
+        System.out.println("Informe uma palavra: ");
+        String palavra = in.nextLine();
+
+        String reverse = "";
+        for(int i = palavra.length()-1; i >= 0; i--) {
+           reverse += palavra.charAt(i);
+        }
+
+            if (reverse.equals(palavra)) {
+                System.out.println("É palíndromo");
+            } else {
+                System.out.println("Náo é palíndromo");
+            }
+        }
+
+    }
