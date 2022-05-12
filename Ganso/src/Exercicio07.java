@@ -124,7 +124,7 @@ public class Exercicio07 {
         Scanner in = new Scanner(System.in);
         int tentativas = 3;
         while (tentativas > 0) {
-            System.out.println("Informer seu pin: ");
+            System.out.println("Informe seu pin: ");
             int pin = in.nextInt();
 
             if (pin == 91352) {

@@ -3,75 +3,115 @@ import java.util.Random;
 
 public class Exercicio8 {
 
-        /*
-}
         public static void main(String[] args) {
+            int jogador,computador;
                 Scanner in = new Scanner(System.in);
-                System.out.println("Jogador: escolha entre 0-pedra, 1-papel ou 2-tesoura");
-                int jogador = in.nextInt();
-                Random gerador = new Random();
-                int gerador = in.nextInt();
+            System.out.println("Pedra = 0");
+            System.out.println("Papel = 1");
+            System.out.println("Tesoura = 2");
 
-                int pedra = 0;
-                int papel = 1;
-                int tesoura = 2;
-
-                for (int i = 0; i < 10; i++) {
-                        System.out.println(gerador.nextInt(2));
+            int PontosComputador = 0;
+            int PontosJogador = 0;
 
 
-                if (jogador = gerador) {
 
-                }
-                        if (jogador.contains("papel")) {
-                                papel = 1;
-                        }
-                        if (jogador.contains("tesoura")) {
-                                tesoura = 2;
-                        }
+            while ( PontosComputador < 10 && PontosJogador < 10) {
 
-                if (jogador = 0 && gerador = 0) {
-                        System.out.println("Empate");
-                }
+                System.out.println("Jogador escolha uma opção: ");
+                jogador = in.nextInt();
 
-                else if (jogador1.contains("papel") && jogador2.contains("papel")) {
-                        System.out.println("Empate");
-                }
+            switch (jogador) {
+                case 0:
+                    System.out.println("Jogador escolheu Pedra");
+                    break;
+                case 1:
+                    System.out.println("Jogador escolheu Papel");
+                    break;
+                case 2:
+                    System.out.println("Jogador escolheu Tesoura");
+                    break;
+                default:
+                    System.out.println("Resposta inválida");
+                    break;
+            }
 
-                else if (jogador1.contains("tesoura") && jogador2.contains("tesoura")) {
-                        System.out.println("Empate");
-                }
 
-                else if (jogador1.contains("pedra") && jogador2.contains("papel")) {
-                        System.out.println("Jogador2 venceu");
-                }
+                 computador = (int) (Math.random()* 3);
 
-                else if (jogador1.contains("pedra") && jogador2.contains("tesoura")) {
-                        System.out.println("Jogador1 venceu");
+                 switch (computador) {
+                     case 0:
+                         System.out.println("Computador escolheu Pedra");
+                         break;
+                     case 1:
+                         System.out.println("Computador escolheu Papel");
+                         break;
+                     case 2:
+                         System.out.println("Computador escolheu Tesoura");
+                         break;
+                 }
 
-                }
 
-                else if (jogador1.contains("papel") && jogador2.contains("pedra")) {
-                        System.out.println("Jogador1 venceu");
+               switch (jogador){
+                   case 0:
+                       switch (computador) {
+                           case 0:
+                               System.out.println("Empate");
+                               break;
+                           case 1:
+                               System.out.println("Computador venceu");
+                               PontosComputador ++;
+                               break;
+                           case 2:
+                               System.out.println("Jogador venceu");
+                               PontosJogador++;
+                               break;
+                       } break;
 
-                }
 
-                else if (jogador1.contains("papel") && jogador2.contains("tesoura")) {
-                        System.out.println("Jogador2 venceu");
-                }
+                   case 1:
+                       switch (computador) {
+                           case 0:
+                               System.out.println("Jogador venceu");
+                               PontosJogador++;
+                               break;
+                           case 1:
+                               System.out.println("Empate");
 
-                else if (jogador1.contains("tesoura") && jogador2.contains("papel")) {
-                        System.out.println("Jogador1 venceu");
-                }
+                               break;
+                           case 2:
+                               System.out.println("Computador veceu");
+                               PontosComputador++;
+                               break;
+                       } break;
+                   case 2:
+                       switch (computador) {
+                           case 0:
+                               System.out.println("Computador venceu");
+                               PontosComputador++;
+                               break;
+                           case 1:
+                               System.out.println("Jogador venceu");
+                               PontosJogador++;
+                               break;
+                           case 2:
+                               System.out.println("Empate");
+                               break;
 
-                else if (jogador1.contains("tesoura") && jogador2.contains("pedra")) {
-                        System.out.println("Jogador2 venceu");
-                }
 
-                else  {
+               } break;
 
-                        System.out.println("Resposta inválida");
-                }
+               default:
+                       System.out.println("Resposta inválida");
+                 }
+
         }
- */
+            if(PontosComputador == 10) {
+            System.out.println("Vencedor final é o Computador");
+
+        } else if (PontosJogador == 10) {
+                System.out.println("Vencedor final é o Jogador");
+
+            }
+
+        }
 }
