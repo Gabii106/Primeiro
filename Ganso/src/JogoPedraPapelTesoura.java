@@ -1,7 +1,6 @@
 import java.util.Scanner;
-import java.util.Random;
 
-public class Exercicio8 {
+public class JogoPedraPapelTesoura {
 
         public static void main(String[] args) {
             System.out.println("Bem vindo ao jogo PEDRA, PAPEL OU TESOURA");
