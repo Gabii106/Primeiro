@@ -32,7 +32,7 @@ public class Exercicio8 {
                     System.out.println(" ✂ Jogador escolheu Tesoura");
                     break;
                 default:
-                    System.out.println("Resposta inválida");
+                    System.err.println("Resposta inválida");
                     break;
             }
 
@@ -102,7 +102,7 @@ public class Exercicio8 {
                } break;
 
                default:
-                       System.out.println("Resposta inválida");
+                       System.err.println("Resposta inválida");
                  }
 
         }
