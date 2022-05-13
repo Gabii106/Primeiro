@@ -4,11 +4,12 @@ import java.util.Random;
 public class Exercicio8 {
 
         public static void main(String[] args) {
+            System.out.println("Bem vindo ao jogo PEDRA, PAPEL OU TESOURA");
             int jogador,computador;
                 Scanner in = new Scanner(System.in);
-            System.out.println("Pedra = 0");
-            System.out.println("Papel = 1");
-            System.out.println("Tesoura = 2");
+            System.out.println(" ⭓ Pedra = 0");
+            System.out.println(" □ Papel = 1");
+            System.out.println(" ✂ Tesoura = 2");
 
             int PontosComputador = 0;
             int PontosJogador = 0;
@@ -22,13 +23,13 @@ public class Exercicio8 {
 
             switch (jogador) {
                 case 0:
-                    System.out.println("Jogador escolheu Pedra");
+                    System.out.println(" ⭓ Jogador escolheu Pedra");
                     break;
                 case 1:
-                    System.out.println("Jogador escolheu Papel");
+                    System.out.println(" □ Jogador escolheu Papel");
                     break;
                 case 2:
-                    System.out.println("Jogador escolheu Tesoura");
+                    System.out.println(" ✂ Jogador escolheu Tesoura");
                     break;
                 default:
                     System.out.println("Resposta inválida");
@@ -40,13 +41,13 @@ public class Exercicio8 {
 
                  switch (computador) {
                      case 0:
-                         System.out.println("Computador escolheu Pedra");
+                         System.out.println(" ⭓ Computador escolheu Pedra");
                          break;
                      case 1:
-                         System.out.println("Computador escolheu Papel");
+                         System.out.println(" □ Computador escolheu Papel");
                          break;
                      case 2:
-                         System.out.println("Computador escolheu Tesoura");
+                         System.out.println(" ✂ Computador escolheu Tesoura");
                          break;
                  }
 
@@ -112,6 +113,7 @@ public class Exercicio8 {
                 System.out.println("Vencedor final é o Jogador");
 
             }
-
+            System.out.println("Total de pontos do Computador: "+PontosComputador);
+            System.out.println("Total de pontos do Jogador: " +PontosJogador);
         }
 }
