@@ -218,7 +218,7 @@ public class Recap {
             }
         }
 
-        //Scanner in = new Scanner(System.in);
+        /*Scanner in = new Scanner(System.in);
         System.out.println("Informer a linha escolida");
         int linha = in.nextInt();
         System.out.println("Informer a coluna escolida");
@@ -236,7 +236,7 @@ public class Recap {
         };
 
 
-
+*/
     }
 
 }
