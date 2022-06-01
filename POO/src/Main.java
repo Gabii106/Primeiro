@@ -1,10 +1,14 @@
-import classes.*;
+import classes.lanches.*;
 
 import java.util.Scanner;
 
 public class Main {
+    public static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
-        Scanner in = new Scanner(System.in);
+        montarLanche();
+    }
+
+    private static void montarLanche(){
         System.out.println("-MENU: escolha uma opção-");
         System.out.println("(1) - X-Salada");
         System.out.println("(2) - X-Burguer");
@@ -31,7 +35,7 @@ public class Main {
             case 5:
                 lanche = new MiniPizza();
                 break;
-           case 6:
+            case 6:
                 lanche = new Pizza();
                 break;
             default:
@@ -53,11 +57,11 @@ public class Main {
                 }
             }
 
-        if (lanche instanceof XBurguer) {
-            System.out.println("Lanche aberto? (S/N)");
-            String aberto = in.nextLine();
-            ((XBurguer) lanche).setAberto(aberto.equalsIgnoreCase("S"));
-        }
+            if (lanche instanceof XBurguer) {
+                System.out.println("Lanche aberto? (S/N)");
+                String aberto = in.nextLine();
+                ((XBurguer) lanche).setAberto(aberto.equalsIgnoreCase("S"));
+            }
         } else {
             System.out.println("Escolha um sabor: ");
             System.out.println("(1) - 4 queijos");
