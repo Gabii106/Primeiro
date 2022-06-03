@@ -6,6 +6,7 @@ public class Main {
     public static Scanner in = new Scanner(System.in);
     public static void main(String[] args) {
         montarLanche();
+
     }
 
     private static void montarLanche(){
@@ -112,7 +113,6 @@ public class Main {
         }
         System.out.print("Informe o valor do(a) " + lanche.getTipo() + ": R$");
         lanche.setValor(in.nextDouble());
-        lanche.montarComanda();
     }
 
 }

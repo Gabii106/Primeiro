@@ -14,23 +14,6 @@ public abstract class Lanche {
         }
     }
 
-    public void montarComanda(){
-        if ( this instanceof  MiniPizza){
-            System.out.println("===="+this.getTipo()+" - "+((MiniPizza)this).getSabor()+"====");
-
-        } else {
-            System.out.println("===="+this.getTipo()+"====");
-        }
-        System.out.printf("Valor: R$%.2f\n", this.getValor());
-        System.out.println("-INGREDIENTES-");
-        for (String ingrediente : this.getIngredientes()) {
-            if (ingrediente != null){
-                System.out.println(ingrediente);
-            }
-        }
-        System.out.println("--------------");
-    }
-
     public void setValor(double valor){
         this.valor = valor;
     }

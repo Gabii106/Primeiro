@@ -16,15 +16,6 @@ public class XBurguer extends Sanduiche {
         this.setTipo("XBurguer");
     }
 
-    @Override
-    public void montarComanda(){
-        super.montarComanda();
-        if (this.isAberto()) {
-            System.out.println("-- LANCHE ABERTO --");
-        }
-
-    }
-
     public void setAberto(boolean aberto){
         this.aberto = aberto;
     }
