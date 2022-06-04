@@ -2,21 +2,18 @@ package PacoteListaDeTarefas;
 
 import java.util.UUID;
 
-public class Tarefa {
+public class ChecklistItem {
     private String uuid;
     private String nome;
     private String descricao;
     private boolean completa;
     private int ordem;
 
-    private ChecklistItem[] checklist;
-
-    public Tarefa() {
+    public ChecklistItem() {
         this.setUuid(UUID.randomUUID().toString());
     }
 
     public void completar(){
-
         setCompleta(true);
     }
 
@@ -36,7 +33,4 @@ public class Tarefa {
 
     public void setUuid(String uuid) { this.uuid = uuid; }
     public String getUuid() { return uuid; }
-
-    public ChecklistItem[] getChecklistItem() { return checklist; }
-    public void setChecklistItem(ChecklistItem[] checklist) { this.checklist = checklist; }
 }

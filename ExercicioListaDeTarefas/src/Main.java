@@ -6,7 +6,6 @@ public class Main {
         Scanner in = new Scanner(System.in);
 
        Tarefa t = new Tarefa();
-       // System.out.println(t.getUuid());
         System.out.print("Informe o nome da tarefa: ");
         t.setNome(in.nextLine());
         System.out.print("Descreva a tarefa: ");
