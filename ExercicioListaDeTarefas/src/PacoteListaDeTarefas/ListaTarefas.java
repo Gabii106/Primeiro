@@ -7,22 +7,45 @@ public class ListaTarefas {
     private Tarefa[] tarefas;
 
     public ListaTarefas(int tamanhoLista){
-        //todo
+        this.setTamanhoLista(tamanhoLista);
+        this.setTarefas(new Tarefa[tamanhoLista]);
     }
 
     public boolean adicionarTarefa(Tarefa tarefa){
-        //todo
+       if (tarefa.getOrdem() < 0 ||
+               tarefa.getOrdem() >= this.getTamanhoLista()){
+           return false;
+       }
+        for (int i = 0; i < this.getTamanhoLista(); i++){
+            if (this.getTarefas()[i] == null){
+                this.getTarefas()[i] = tarefa;
+                return true;
+            } else if (this.tarefas[i].getOrdem() == tarefa.getOrdem()){
+                break;
+            }
+        }
         return false;
     }
 
-    public Tarefa buscarTarefa(int posicao){
-        //todo
+    public Tarefa buscarTarefa(int ordem){
+        for (Tarefa t : this.getTarefas()){
+            if (t != null && t.getOrdem() == ordem){
+                return t;
+            }
+        }
         return null;
     }
+    public boolean alterarOrdemTarefa(int antigaOrdem, int novaOrdem){
+        Tarefa tarefaAntiga = buscarTarefa(antigaOrdem);
+        Tarefa novaTarefa = buscarTarefa(novaOrdem);
 
-    public boolean alterarOrdemTarefa(Tarefa tarefa, int novaPosicao){
-        //todo
-        return false;
+        if (tarefaAntiga == null || novaTarefa == null){
+            return false;
+        }
+
+        tarefaAntiga.setOrdem(novaOrdem);
+        novaTarefa.setOrdem(antigaOrdem);
+        return true;
     }
 
     // GETTER & SETTER

@@ -7,8 +7,6 @@ public class ChecklistItem {
     private String nome;
     private String descricao;
     private boolean completa;
-    private int ordem;
-
     public ChecklistItem() {
         this.setUuid(UUID.randomUUID().toString());
     }
@@ -27,9 +25,6 @@ public class ChecklistItem {
 
     public void setCompleta(boolean completa) { this.completa = completa; }
     public boolean isCompleta() { return completa; }
-
-    public void setOrdem(int ordem) { this.ordem = ordem; }
-    public int getOrdem() { return ordem; }
 
     public void setUuid(String uuid) { this.uuid = uuid; }
     public String getUuid() { return uuid; }
