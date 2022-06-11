@@ -1,11 +1,6 @@
 package classes.lanches;
 
 public class XBurguer extends Sanduiche {
-
-
-
-
-
     private boolean aberto;
 
     public XBurguer(){
@@ -19,9 +14,12 @@ public class XBurguer extends Sanduiche {
     public void setAberto(boolean aberto){
         this.aberto = aberto;
     }
-
     public boolean isAberto(){
         return this.aberto;
     }
 
+    @Override
+    public void mostrarDetalhesComanda() {
+
+    }
 }

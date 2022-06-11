@@ -14,6 +14,8 @@ public abstract class Lanche {
         }
     }
 
+    public abstract void mostrarDetalhesComanda();
+
     public void setValor(double valor){
         this.valor = valor;
     }
