@@ -16,34 +16,23 @@ public class Avião implements MaioTransporte {
 
     @Override
     public boolean verificarOcupacao(String assento) {
-        if (getAssentos().isEmpty()){
-            System.out.println("Não há assentos disponiveis!");
-        } else {
-            boolean encontrado = false;
-            for (int i = 0; i < assentos.size(); i++){
-                if (assentos.contains(assento)){
-                    System.out.println("O assento"+assento+"foi encontrado!");
-                    encontrado = true;
-                }
-                else {
-                    System.out.println("Assento não está disponivel!");
+            for (AssentoVoo a : this.assentos) {
+                if (a.getCodigo().equalsIgnoreCase(assento)) {
+                    return a.isOcupado();
                 }
             }
-        }
         return false;
     }
 
     @Override
     public int quantidadeLivre() {
-        int contador = 0;
-        if (getAssentos().isEmpty()){
-            System.out.println("Não há assentos disponiveis!");
-        } else {
-            for (int i = 0; i < assentos.size(); i++){
-                contador++;
+        int livres = 0;
+            for (AssentoVoo a : this.assentos) {
+                if (!a.isOcupado()) {
+                    livres++;
+                }
             }
-        }
-        return contador;
+        return livres;
     }
 
     @Override
@@ -53,6 +42,20 @@ public class Avião implements MaioTransporte {
 
     @Override
     public Assento getAssento(String assento) {
+        for (AssentoVoo a : this.assentos) {
+            if (a.getCodigo().equalsIgnoreCase(assento)){
+                return a;
+            }
+        }
+        return null;
+    }
+    public Assento getAssento(String assento, String classe) {
+        for (AssentoVoo a : this.assentos) {
+            if (a.getCodigo().equalsIgnoreCase(assento)
+                    && a.getClasse().equalsIgnoreCase(classe)) {
+                return a;
+            }
+        }
         return null;
     }
 }
