@@ -1,7 +1,4 @@
-import classes.DVD;
-import classes.Estante;
-import classes.Item;
-import classes.Livro;
+import classes.*;
 
 import java.util.Scanner;
 
@@ -12,39 +9,43 @@ public class Main {
         Estante e = new Estante(5);
         boolean loop = true;
         while (loop) {
-            int escolhido = escolherOpção();
+            EMenu escolhido = escolherOpção();
 
             switch (escolhido) {
-                case 1:
-                    adicionarItem(e);
-                    break;
-                case 2:
-                    buscarItem(e);
-                    break;
-                case 3:
-                    removerItem(e);
-                    break;
-                case 4:
-                    mostrarEstante(e);
-                    break;
-                case 0:
+                case SAIR:
                     loop = false;
                     System.out.println("Programa finalizado!");
                     break;
+                case ADICIONAR_ITEM:
+                    adicionarItem(e);
+                    break;
+                case BUSCAR_ITEM:
+                    buscarItem(e);
+                    break;
+                case REMOVER_ITEM:
+                    removerItem(e);
+                    break;
+                case MOSTRAR_ITENS:
+                    mostrarEstante(e);
+                    break;
+
                 default:
                     System.out.println("Selecione uma opção válida!");
             }
         }
     }
-    public static int escolherOpção () {
-        System.out.println("---MENU PRINCIPAL---");
+    public static EMenu escolherOpção () {
+        System.out.println("Escolha uma opção: ");
+        for (EMenu menu : EMenu.values()){
+            System.out.printf("(%i) - ");
+        }
         System.out.println("(1) - Adicionar um item");
         System.out.println("(2) - Buscar um item");
         System.out.println("(3) - Remover um item");
         System.out.println("(4) - Mostrar itens da estante");
         System.out.println("(0) - Sair");
-        System.out.println("Escolha uma opção: ");
-        return in.nextInt();
+
+        return EMenu.;
     }
 
     public static void adicionarItem (Estante e){

@@ -5,6 +5,5 @@ public class Main {
       Onibus onibus = new Onibus(3);
       onibus.getAssento("3").ocupar();
       onibus.mostrarAssentos();
-
     }
 }
