@@ -13,7 +13,7 @@ public enum ValorCarta {
     DAMA("Q"),
     REI("K");
 
-    private String valor;
+    private final String valor;
     ValorCarta (String valor){
        this.valor = valor;
     }

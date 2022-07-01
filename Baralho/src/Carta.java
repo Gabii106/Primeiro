@@ -2,7 +2,10 @@ import java.util.ArrayList;
 
 public class Carta {
 private Naipe naipe;
-private ValorCarta valorCarta;
+private ValorCarta valor;
+private int valorReal;
+
+//private ArrayList<Baralho> baralhos = new ArrayList<>();
 
     public Naipe getNaipe() {
         return naipe;
@@ -12,11 +15,19 @@ private ValorCarta valorCarta;
         this.naipe = naipe;
     }
 
-    public ValorCarta getValorCarta() {
-        return valorCarta;
+    public ValorCarta getValor() {
+        return valor;
     }
 
-    public void setValorCarta(ValorCarta valorCarta) {
-        this.valorCarta = valorCarta;
+    public void setValor(ValorCarta valor) {
+        this.valor = valor;
+    }
+
+    public int getValorReal() {
+        return valorReal;
+    }
+
+    public void setValorReal(int valorReal) {
+        this.valorReal = valorReal;
     }
 }

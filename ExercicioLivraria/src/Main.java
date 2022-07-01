@@ -9,7 +9,7 @@ public class Main {
         Estante e = new Estante(5);
         boolean loop = true;
         while (loop) {
-            EMenu escolhido = escolherOpção();
+            EMenu escolhido = escolherOpcao();
 
             switch (escolhido) {
                 case SAIR:
@@ -34,18 +34,20 @@ public class Main {
             }
         }
     }
-    public static EMenu escolherOpção () {
-        System.out.println("Escolha uma opção: ");
-        for (EMenu menu : EMenu.values()){
-            System.out.printf("(%i) - ");
+    public static EMenu escolherOpcao() {
+        EMenu escolha = null;
+        while (escolha == null) {
+            System.out.println("Selecione uma opção");
+            for (EMenu menu : EMenu.values()) {
+                System.out.printf("(%d) - %s\n", menu.getValorOpcao(), menu.getDescricao());
+            }
+            escolha = EMenu.getByValorOpcao(in.nextInt());
+            in.nextLine();
+            if (escolha == null) {
+                System.err.println("Selecione uma opção válida!");
+            }
         }
-        System.out.println("(1) - Adicionar um item");
-        System.out.println("(2) - Buscar um item");
-        System.out.println("(3) - Remover um item");
-        System.out.println("(4) - Mostrar itens da estante");
-        System.out.println("(0) - Sair");
-
-        return EMenu.;
+        return escolha;
     }
 
     public static void adicionarItem (Estante e){
@@ -106,35 +108,48 @@ public class Main {
         }
     }
     public static void buscarItem(Estante e){
-        in.nextLine();
-        System.out.println("Qual item deseja buscar?");
-        String buscando = in.nextLine();
-        Item it = e.buscarItem(buscando);
-        if (it == null) {
-            System.out.println("Item não encontrado!");
+        System.out.print("Informe o título para busca: ");
+        Item i = e.buscarItem(in.nextLine());
+        if (i == null) {
+            System.err.println("O título buscado não existe na estante!");
         } else {
-            System.out.println("Item encontrado!");
-            for (int i = 0; i < 1; i++) {
-                System.out.println("Escolha uma opção: ");
-                System.out.println("(1) - Avaliar item");
-                System.out.println("(2) - Ver as avaliações do item");
-                int opção = in.nextInt();
-                in.nextLine();
-                switch (opção) {
-                    case 1:
-                        it.avaliar();
-                        break;
-                    case 2:
-                        for (int r = 0; r < it.getAvaliacoes().length; r++) {
-                            if (it.getAvaliacoes()[r] != null) {
-                                it.getAvaliacoes()[r] = it.getAvaliacoes()[r];
-                            }
-                        }
-                        System.out.println("O raking é " + it.getTotalRanting());
-                        break;
+            int escolha = -1;
+            while (escolha < 0 || escolha > 2) {
+                System.out.println(i.getTitulo()+ " encontrado! Ações disponíveis: ");
+                System.out.println("(1) - Ver avaliações");
+                System.out.println("(2) - Avaliar");
+                System.out.println("(0) - Voltar");
+                escolha = in.nextInt();
+                if (escolha < 0 || escolha > 2) {
+                    System.err.println("Selecione uma opção válida");
                 }
             }
+            in.nextLine();
+            switch (escolha) {
+                case 0:
+                    System.out.println("Retornando...");
+                    break;
+                case 1:
+                    mostarAvaliacoes(i);
+                    break;
+                case 2:
+                    i.avaliar();
+                    break;
+            }
         }
+    }
+
+    public static void mostarAvaliacoes(Item i) {
+        for (Avaliaçao a : i.getAvaliacoes()) {
+            if (a != null) {
+                System.out.println("Autor: "+a.getNome());
+                System.out.println("avaliação: "+a.getRating());
+                System.out.println("Comentário: ");
+                System.out.println(a.getFeedback());
+                System.out.println("--------------------");
+            }
+        }
+        System.out.println("Classificação final: "+i.getTotalRanting());
     }
     public static void removerItem(Estante e){
         System.out.println("Informe a posição do item que deseja remover: ");
@@ -149,12 +164,16 @@ public class Main {
     }
 
     public static void mostrarEstante(Estante e){
-        for (int c = 0; c < 5; c++) {
-            if (e.getItens()[c] != null) {
-                System.out.println(e.getItens()[c].getTitulo()+"("+e.getItens()[c].getGenero()+")");
+        if (e.quantidadeItens() == 0) {
+            System.out.println("Estante vazia!");
+        } else {
+            for (int i = 0; i < e.getCapMaxima(); i++) {
+                Item item = e.getItens().get(i);
+                if (item != null) {
+                    System.out.println("[" + i + "] " + item.getTitulo() + " (" + item.getGenero() + ")");
+                }
             }
         }
-
     }
 
 

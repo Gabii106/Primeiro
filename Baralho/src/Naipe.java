@@ -4,7 +4,7 @@ public enum Naipe {
     ESPADA("♠"),
     PAUS("♣");
 
-private String naipe;
+private final String naipe;
 
 Naipe (String naipe){
     this.naipe = naipe;
