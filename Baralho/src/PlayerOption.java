@@ -1,23 +1,31 @@
 public enum PlayerOption {
-    ;
+    ONEMORE(1, "(1) - One more"),
+    STOP(2, "(2) - Stop"),
+    DOUBLECARD(3, "(3) - Double cards"),
+    EXIT(0, "(0) - Exit");
 
+    private int option;
+    private String desc;
 
-    private int valor;
-    private String description;
-
-    public int getValor() {
-        return valor;
+    PlayerOption(int option, String desc) {
+        this.option = option;
+        this.desc = desc;
     }
 
-    public void setValor(int valor) {
-        this.valor = valor;
+    public int getOption() {
+        return option;
     }
 
-    public String getDescription() {
-        return description;
+    public String getDesc() {
+        return desc;
     }
 
-    public void setDescription(String description) {
-        this.description = description;
+    public static PlayerOption getfromInt(int opt) {
+        for(PlayerOption o : PlayerOption.values()) {
+            if (o.getOption() == opt) {
+                return o;
+            }
+        }
+        return null;
     }
 }

@@ -27,8 +27,12 @@ public abstract class Item {
     }
 
     public double getTotalRanting(){
-        return this.avaliacoes.stream().mapToDouble(Avaliaçao:: getRating).sum() / this.avaliacoes.size();
+        Double valor = this.avaliacoes.stream().mapToDouble(Avaliaçao:: getRating).sum() / this.avaliacoes.size();
+        return valor.isNaN() ? 0 : valor;
     }
+
+    public abstract void montarDetalhes(Scanner in);
+    public abstract void mostrarDetalhes();
 
     // GETTER & SETTER
 
