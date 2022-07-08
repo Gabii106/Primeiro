@@ -1,5 +1,6 @@
 import classes.*;
 
+import java.time.format.DateTimeFormatter;
 import java.util.Scanner;
 
 public class Main {
@@ -150,6 +151,8 @@ public class Main {
 
     public static void mostarAvaliacoes(Item i) {
         i.getAvaliacoes().forEach(a -> {
+            System.out.println("Data da avaliação: "+a.getDataAvaliação()
+                    .format(DateTimeFormatter.ofPattern("dd/MM/yyyy HH:mm:ss")));
             System.out.println("Autor: "+a.getNome());
             System.out.println("avaliação: "+a.getRating());
             System.out.println("Comentário: ");

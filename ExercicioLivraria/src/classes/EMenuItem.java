@@ -18,7 +18,7 @@ public enum EMenuItem implements IMenu{
                 return e;
             }
         }
-        return null;
+        throw new RuntimeException("Não encontrado!");
     }
     public int getValorOpcao() {
         return valorOpcao;

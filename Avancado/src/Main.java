@@ -5,7 +5,7 @@ public class Main {
     public static Scanner in = new Scanner(System.in);
 
     public static void main(String[] args) {
-        ex3();
+        ex5();
     }
 
     public static void ex1(){
@@ -72,6 +72,24 @@ public class Main {
             }
         System.out.println(palavras);
     }
+    public static void ex4(){
 
+    }
+
+    public static void ex5(){
+        while (true){
+            try {
+                System.out.print("Informe um número: ");
+                System.out.println(in.nextInt());
+            } catch (InputMismatchException e){
+                System.out.println("Não é um número!");
+                in.nextLine();
+            } catch (NoSuchElementException e2){
+
+            } finally {
+
+            }
+        }
+    }
 
 }
