@@ -1,3 +1,6 @@
+import java.time.Duration;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 import java.util.*;
 
 public class Main {
@@ -73,18 +76,42 @@ public class Main {
         System.out.println(palavras);
     }
     public static void ex4(){
+//        LocalDateTime datetime = LocalDateTime.now();
+//        System.out.println(datetime.getYear());
+//        System.out.println(datetime.getMonth().getValue());
+//        System.out.println(datetime.getDayOfMonth());
+//        System.out.println(datetime.getHour());
+//        System.out.println(datetime.getMinute());
+//        System.out.println(datetime.getSecond());
+//        System.out.println(datetime.getNano());
+//        System.out.println(datetime.getDayOfYear());
+//        System.out.println(datetime.toLocalDate().isLeapYear());
+//        System.out.println(datetime);
+
+        LocalDateTime inicio = LocalDateTime.of(2022, 7, 7, 8, 3,21);
+        LocalDateTime fim = LocalDateTime.of(2022, 7, 7, 18, 25,21);
+
+        Duration bet = Duration.between(inicio, fim).minusHours(1).minusMinutes(30);
+
+        System.out.println(bet);
+        System.out.printf("%d:%d:%d\n", bet.toHoursPart(), bet.toMinutesPart(), bet.toSecondsPart());
+
+
+        System.out.println(LocalDateTime.now().format(
+                DateTimeFormatter.ofPattern("dd/MM/yyyy HH 'horas', mm 'minutos e' ss 'segundos'")
+        ));
 
     }
 
     public static void ex5(){
-        while (true){
+        while (true) {
             try {
                 System.out.print("Informe um número: ");
                 System.out.println(in.nextInt());
-            } catch (InputMismatchException e){
-                System.out.println("Não é um número!");
+            } catch (InputMismatchException e) {
                 in.nextLine();
-            } catch (NoSuchElementException e2){
+                System.err.println("não é um número!");
+            } catch (NoSuchElementException e2) {
 
             } finally {
 
