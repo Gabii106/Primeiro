@@ -15,10 +15,42 @@ body{
     color: blue!important;
 } */
 
+.w-50{
+    width: 50%;
+}
+
+.w-40 {
+    width: 40%;
+}
+
+.edit-cell {
+    text-align: center;
+}
+
+.edit-cell a {
+    text-decoration: none;
+    background-color: rgb(55, 100, 212);
+    padding: 4px 8px;
+    margin: 2px 0;
+    display: inline-block;
+    color: white;
+    border-radius: 4px;
+}
+
+.edit-cell a:hover {
+    background-color: rgb(55, 82, 210);
+}
+
+ table.contained {
+    margin: 0 15%;
+    width: 70%;
+} 
+
 table {
-    border: 1px solid black;
+    /* border: 1px solid black; */
     width: 100%;
     border-spacing: 0;
+    border-collapse: collapse;
 }
 
 th {
@@ -27,6 +59,43 @@ th {
     padding: 8px 4px;
 }
 
+tr {
+    border-bottom: 1px solid #b3b3b3;
+}
+
+tfoot tr {
+    border-bottom: 0;
+}
+
+tfoot tr.sum td {
+    text-align: right;
+}
+
+small {
+    font-size: 12px;
+}
+
 * {
     font-family: 'Poppins';
+}
+
+.asi_1 ul li a {
+    background-color: rgb(91, 91, 175);
+    color: rgb(245, 246, 247);
+    text-decoration: none;
+    padding: 8px 10px; 
+    border-radius: 6px;
+    display: inline-block;
+    margin: 2px 0;
+    font-size: large;
+}
+
+#h2_1 {
+    text-align: center;
+    font-size: 33px;
+}
+
+.asi_1 ul li a:hover {
+    background-color: rgb(82, 82, 187);
+    color: rgb(0, 0, 0);
 }
