@@ -105,6 +105,7 @@ div#titulos .algo {
 
 #titulo_form {
     text-align: center;
+    color: rgb(104, 104, 204);
 }
 
 .forms {
@@ -113,9 +114,13 @@ div#titulos .algo {
     margin: 0 20px;
 }
 
+/* #texto_1 {
+    
+} */
+
  /* #box_1 {
     
-}   */
+ } */
 
 /* #bot_1 {
     
