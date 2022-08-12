@@ -6,30 +6,104 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Página com Bootstrap</title>
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-gH2yIJqKdNHPEq0n4Mqa/HGKIhSkIHeL5AyhkYV8i59U5AR6csBvApHHNl/vI1Bx" crossorigin="anonymous">
-    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.2.0/dist/js/bootstrap.bundle.min.js" integrity="sha384-A3rJD856KowSb7dwlZdYEkO39Gagi7vIsF0jrRAoQmDKKtQBHUuLZ9AsSv4jD4Xa" crossorigin="anonymous"></script>
 </head>
 <body class="d-flex flex-column">
     <nav class="navbar bg-teal navbar-dark">
         <div class="container-fluid">
           <a class="navbar-brand" href="#">
-            <img src="img/logo.svg" alt="" width="30" height="30">
+            <img src="img/logo.svg" alt="Lotus by Jack Made from <a href='https://thenounproject.com/browse/icons/term/lotus/' target='_blank' title='Lotus Icons'>Noun Project</a>" width="30" height="30" >
             Meu site
         </a>
           <div>
-            <button class="btn btn-outline-light ms-auto">Login</button>
+            <button class="btn btn-outline-light ms-auto" data-bs-toggle="modal" data-bs-target="#exampleModal">Login</button>
           </div>
         </div>
       </nav>
-      <div class="footer mt-auto text-light hstack gap-3">
-        <div class="me-auto" >
-        Lotus by Jack Made from <a href="https://thenounproject.com/browse/icons/term/lotus/" target="_blank" title="Lotus Icons">Noun Project</a>
-        </div>  
+
+      <div class="modal" tabindex="-1" id="exampleModal">
+        <div class="modal-dialog">
+          <div class="modal-content">
+            <div class="modal-header">
+              <h5 class="modal-title">Login</h5>
+              <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
+            </div>
+            <div class="modal-body">
+              <div class="forms">
+                <!-- <div class="mb-3">
+                  <label for="name" class="form-name">Username:</label>
+                  <input type="text" class="form-control" id="name" >
+                </div>
+                <div class="mb-3 row">
+                  <label for="password" class="form-password">Password</label>
+                    <input type="password" class="form-control" id="password">
+                  </div>
+                  <div class="col-auto">
+                    <button type="submit" class="btn btn-primary mb-3">Entrar</button>
+                  </div> -->
+        
+                  <div class="algo">
+                    <h3>Login</h3>
+                  </div>
+        
+                  <div class="algo">
+                    <label for="txt">Username</label>:</label>
+                    <input type="text" id="txt"/>
+                  </div>
+        
+                  <div class="algo">
+                    <label for="pass">Password:</label>
+                    <input type="password" id="pass">
+                  </div>
+        
+                  <div class="algo">
+                    <button id="bot_1" class="btn btn-outline-light ms-auto">Entrar</button>
+                  </div>
+              
+              </div>
+            </div>
+            
+          </div>
+        </div>
+      </div>
+
+      
+      <div class="footer mt-auto text-light hstack gap-3 align-items-stretch">
+          <div class="d-flex flex-row align-items-stretch flex-grow-1" >
+            <div class="flex-grow-1 ">
+              <h4>Dúvidas</h4>
+              <hr class="me-2 mb-0">
+              <div class="section">
+                <a href="" class="text-decoration-none link-light">teste</a>
+                <a href="" class="text-decoration-none link-light">teste</a>
+                <a href="" class="text-decoration-none link-light">teste</a>
+              </div>
+            </div>
+            <div class="flex-grow-1 ">
+              <h4>Contato</h4>
+              <hr class="me-2 mb-0">
+              <div class="section" >
+              <a href="" class="text-decoration-none link-light">teste</a>
+              <a href="" class="text-decoration-none link-light">teste</a>
+            </div>
+            </div>
+            <div class="flex-grow-1">
+              <h4 >Batata</h4>
+              <hr class="me-2 mb-0">
+              <div class="section">
+                <a href="" class="text-decoration-none link-light">teste</a>
+                <a href="" class="text-decoration-none link-light">teste</a>
+                <a href="" class="text-decoration-none link-light">teste</a>
+                <a href="" class="text-decoration-none link-light">teste</a></div>
+            </div>
+         </div> 
         <div class="vr"></div>
         <div class="d-flex flex-column gap-3 p-3">
-            <a href="#" class="text-decoration-none text-light">Teste</a>
-            <a href="#" class="text-decoration-none text-light">Teste</a>
-            <a href="#" class="text-decoration-none text-light">Teste</a>
+            <a href="#" class="text-decoration-none link-light mylink"><i class="bi bi-star-fill"></i> Teste</a>
+            <a href="#" class="text-decoration-none link-light mylink"><i class="bi bi-star-fill"></i> Teste</a>
+            <a href="#" class="text-decoration-none link-light mylink"><i class="bi bi-star-fill"></i> Teste</a>
         </div>
     </div>
 </body>
