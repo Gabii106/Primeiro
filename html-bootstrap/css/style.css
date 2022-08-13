@@ -8,7 +8,7 @@ html, body {
     background-color: rgb(107, 121, 192)!important;
 }
 
-div.footer {
+footer {
     padding: 24px;
     background-color: rgb(107, 121, 192)!important;
 }
@@ -18,7 +18,12 @@ a.mylink {
     font-style: italic;
 }
 
-
+footer div div.section {
+    border-left: 1px solid rgba(255,255,255,0.25);
+    padding: 4px;
+    display: flex;
+    flex-direction: column;
+}
 
 div.forms .algo {
     text-align: center;
@@ -33,11 +38,24 @@ div.forms .algo {
     background-color: rgb(99, 114, 192);
 }
 
-/* div.footer div div.section {
-    border-left: 1px solid rgba(255,255,);
-    flex-direction: column;
-} */
+#coisa {
+    margin-right: 5px;
+}
 
-/* @media screen and (max-hi{
-    
-} */
+@media screen and (max-width: 576px) {
+
+    footer div div.section {
+        border-left: 0;
+        padding: 0;
+        margin-bottom: 24px;
+    }
+
+    footer div:last-child div.section {
+        margin-bottom: 0;
+    }
+
+    fieldset.login-card {
+        margin-left: 10%;
+        margin-right: 10%;
+    }
+}
