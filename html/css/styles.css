@@ -166,6 +166,40 @@ div#titulos .algo {
     margin: 0 20px;
 }
 
+.cl_gatos{
+    /* border: solid rgb(104, 104, 204); */
+    border-radius: 20px;
+}
+
+.ns_gatos {
+    display: block;
+}
+
+.btn_gatos {
+    border: 0;
+    background-color: rgb(147, 147, 223);
+    padding: 8px 16px;
+    cursor: pointer;
+    border-radius: 8px;
+    
+}
+
+.btn_gatos:hover {
+    background-color: rgb(135, 135, 221);
+}
+
+#gatos {
+    
+    text-align: center;
+    padding: 15px;
+   
+}
+
+
+
+
+
+
 * {
     font-family: 'Poppins';
 }
