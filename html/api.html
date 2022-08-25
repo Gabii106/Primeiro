@@ -7,50 +7,64 @@
     <title>API</title>
     <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
     <link rel="stylesheet" href="css/styles.css">
-    <script type="text/javascript" id="gatos">
+    <script type="text/javascript">
+        
+        function requestImg(text, gif) {
+            let url = "";
+            if (gif) {
+                url = "https://cataas.com/cat/gif"
+            } else {
+                url = text == null || text == "" ?
+                "https://cataas.com/cat" :
+                `https://cataas.com/cat/says/${text}`;
+            }
 
-        function requestImg(text, gif){
-            // if (gif) {
-            //     url =" https://cataas.com/cat/gif";
-            // } else {
-            let url = text == null || text == "" ?
-            "https://cataas.com/cat?json=true" :
-            `https://cataas.com/cat/says/${text}?json=true`;
-            // }
+            url += "?json=true";
 
+            let imgContainer = document.getElementById("img-container");
+            imgContainer.innerHTML = `
+                <div class="lds-ellipsis"><div></div><div></div><div></div><div></div></div>
+            `
             let req = new XMLHttpRequest();
             req.open("GET", url, true);
             req.onload = () => {
-                let img  = document.getElementsByTagName("img")[0]
-                img.src = "https://cataas.com" +
-                JSON.parse(req.responseText).url; 
-                img.onload = () =>  Array.from(document.getElementsByTagName("button")).disabled = false;
+                imgContainer.innerHTML += `
+                    <img src="https://cataas.com${JSON.parse(req.responseText).url}" style="display: none;"/>
+                `;
+                imgContainer.getElementsByTagName("img")[0].onload = () => {
+                    imgContainer.getElementsByTagName("img")[0].style = "";
+                    imgContainer.getElementsByClassName("lds-ellipsis")[0].style = "display: none;"
+                    Array.from(document.getElementsByTagName("button")).forEach(btn => btn.disabled = false);
+                }
             }
-            Array.from(document.getElementsByTagName("button")).disabled = true;
+            Array.from(document.getElementsByTagName("button")).forEach(btn => btn.disabled = true);
             req.send(null);
         }
+
         function loadImg() {
             requestImg();
         }
 
         function loadImgWithText() {
-           let texto = prompt("Digite o texto a ser inserido na imagem");
-            if (texto != null ){
+            let texto = prompt("Digite o texto a ser inserido na imagem");
+            if (texto != null) {
                 requestImg(texto);
             }
         }
 
-        // function loadGif() {
-        //     requestImg(gif);
-        // }
+        function loadGif() {
+            requestImg(null, true);
+        }
     </script>
 </head>
 <body id="gatos">
-    <img src />
-    <div class="ns_gatos">
-    <button class="btn_gatos" onclick="loadImg()">Get Cat</button>
-    <button class="btn_gatos" onclick="loadImgWithText()">Get Cat With Text</button>
-    <button class="btn_gatos" onclick="loadGif()">Get Gif Cat</button>
+    <div class="container">
+        <div id="img-container"></div>
+        <div class="nav">
+            <button class="btn_gatos" onclick="loadImg()">Get CAT</button>
+            <button class="btn_gatos" onclick="loadImgWithText()">Get CAT with text</button>
+            <button class="btn_gatos" onclick="loadGif()">Get CAT gif</button>
+        </div>
     </div>
 </body>
 </html>
