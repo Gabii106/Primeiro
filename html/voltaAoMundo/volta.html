@@ -1,0 +1,161 @@
+<!DOCTYPE html>
+<html lang="pt-br">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href='https://fonts.googleapis.com/css?family=Poppins' rel='stylesheet'>
+    <title>Volta ao Mundo</title>
+    <script type="text/javascript">
+
+    var db = {
+        "V" : ["Vietnã", "Vaticano"],
+        "O" : ["Ottawa"],
+        "L" : ["Londres"],
+        "T" : ["Toronto"],
+        "A" : ["Alagoinha"]
+    }
+    console.log(db);
+
+        function enviarLugar() {
+            let lugar = document.getElementById("input_volta").value;
+            document.getElementById("input_volta").value = "";
+            console.log(lugar);
+            // verificarV(lugar);
+        }
+
+            
+        //     switch(contador){
+        //      case 0: 
+             
+        //      if(lugar[0] === "v" || lugar[0] === "V"){
+        //         console.log("V funciona");
+        //         console.log("Cont:"+contador);
+        //         contador ++;
+        //         console.log("Cont:"+contador);
+        // } else {
+        //     alert("Você não pode ir para lá");
+        // }
+
+        // case 1:if(lugar[0] === "o" || lugar[0] === "O"){
+        //         console.log("O funciona");
+        //         console.log("Cont:"+contador);
+        //         contador ++;
+        //         console.log("Cont:"+contador);
+        // } else {
+        //     alert("Você não pode ir para lá");
+        // }
+
+        //     }
+        // }
+            // let contador = 0;
+        //     // while(true){
+        //     switch(contador){
+               
+        //         case 0: if(lugar[0] === "v"){
+        //         console.log("v");
+        //         vvv =+ lugar;
+        //         console.log(vvv);
+        //         contador++;
+        //         break;
+
+        // } else {
+        //     // let tentativa = 0;
+        //     // while(tentativa < 4){
+        //         alert("Você não pode ir para lá");
+        //         // lugar = document.getElementById("input_volta").value;
+        //         // document.getElementById("input_volta").value = "";
+        //         // tentativa++;
+        //         break;
+        //     }
+            
+        // //     case 1: 
+        // //     if(lugar[0] === "o"){
+        // //         console.log("o");
+        // //         contador++;
+        // //         break;
+        // // } else {
+        // //    alert("Você não pode ir para lá");
+        // //    break;
+        // // }
+
+        // // case 2:if(lugar[0] === "o"){
+        // //         console.log("o");
+        // //         prompt("Você não pode ir para lá")
+        // //         contador++;
+        // // } else {
+        // //     prompt("Você não pode ir para lá")
+        // // }
+
+        // // case 3: if(lugar[0] === "l"){
+        // //         console.log("l");
+                
+        // //         contador++;
+
+        // // } else {
+        // //     prompt("Você não pode ir para lá")
+        // // }
+
+        // // case 4: if(lugar[0] === "t"){
+        // //         console.log("t");
+                
+        // //         contador++;
+        // // } else {
+        // //     prompt("Você não pode ir para lá")
+        // // }
+
+        // // case 5:if(lugar[0] ===  "a"){
+        // //         console.log("a");
+                
+        // //         contador++;
+        // // } else {
+        // //     prompt("Você não pode ir para lá")
+        // // }
+
+        //     }
+        //     // }
+        // }
+
+        // function verificarV() {
+        //     if(lugar[0] === "v" || lugar[0] === "V"){
+        //         console.log("V funciona");
+        // } else {
+        //     alert("Você não pode ir para lá");
+        // }
+        // }
+        // function verificarO() {
+        //     if(lugar[0] === "o" || lugar[0] === "O"){
+        //         console.log("O funciona");
+        // } else {
+        //     alert("Você não pode ir para lá");
+        // }
+        // }
+        // function verificarL() {
+        //     if(lugar[0] === "l" || lugar[0] === "L"){
+        //         console.log("V funciona");
+        // } else {
+        //     alert("Você não pode ir para lá");
+        // }
+        // }
+        // function verificarT() {
+        //     if(lugar[0] === "t" || lugar[0] === "T"){
+        //         console.log("V funciona");
+        // } else {
+        //     alert("Você não pode ir para lá");
+        // }
+        // }
+        // function verificarA(){
+        //     if(lugar[0] ===  "a"){
+        //         console.log("a");
+        // } else {
+        //     prompt("Você não pode ir para lá")
+        // }
+        
+
+    </script>
+</head>
+<body>
+    <input type="text"  id="input_volta">
+    <button onclick="enviarLugar()">Enviar</button>
+</body>
+</html>
