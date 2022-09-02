@@ -1,5 +1,6 @@
 package com.entra21.primeiroprojetospring.controller;
 
+import com.entra21.primeiroprojetospring.view.repository.FranquiaRepository;
 import org.springframework.web.bind.annotation.GetMapping;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestBody;

@@ -3,12 +3,13 @@ package com.entra21.primeiroprojetospring.model.entity;
 import lombok.Data;
 
 import javax.persistence.*;
+
 @Data
 @Entity
-@Table(name = "franquia")
-public class FranquiaEntity {
+@Table(name = "genero")
+public class GeneroEntity {
     @Column(name = "id")
-    @Id // Primary Key
+    @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
