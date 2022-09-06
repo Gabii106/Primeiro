@@ -42,7 +42,7 @@ public class GeneroRestController {
     public void deleteGenero(@PathVariable(name = "id") Long id) {
         generoRepository.deleteById(id);
     }
-    
+
     @PutMapping("/{id}")
     public ResponseEntity updateGenero( @PathVariable(name = "id") Long id,
                                           @RequestBody String novoNome) {
