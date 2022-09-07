@@ -22,4 +22,6 @@ public class LivroEntity extends ItemEntity{
     @Column(name = "edicao")
     private Integer edicao;
 
+   // @Override
+
 }
