@@ -7,4 +7,5 @@ public class ItemDTO {
     private Long id;
     private String titulo;
     private Boolean emprestado;
+    public String tipo;
 }

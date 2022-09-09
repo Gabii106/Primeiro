@@ -1,10 +1,6 @@
 package com.entra21.primeiroprojetospring.controller;
 
-import com.entra21.primeiroprojetospring.model.dto.GeneroDTO;
-import com.entra21.primeiroprojetospring.model.dto.GeneroPayloadDTO;
 import com.entra21.primeiroprojetospring.model.dto.ItemDTO;
-import com.entra21.primeiroprojetospring.model.dto.ItemPayloadDTO;
-import com.entra21.primeiroprojetospring.view.service.FranquiaService;
 import com.entra21.primeiroprojetospring.view.service.ItemService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
@@ -19,28 +15,9 @@ public class ItemRestController {
     private ItemService itemService;
 
     @GetMapping
-    public List<ItemDTO> getItens() {
-        return itemService.getAll();
+    public List<ItemDTO> getItens(
+            @RequestParam(name = "idGenero", required = false) Long idGenero)
+       {
+        return itemService.getAll(idGenero);
     }
-
-//    @PostMapping
-//    public void addItem(@RequestBody ItemPayloadDTO payloadDTO){
-//        itemService.save(payloadDTO);
-//    }
-
-//    @GetMapping("/{id}")
-//    public ItemDTO getItem(@PathVariable(name = "id") Long id) {
-//        return itemService.getById(id);
-//    }
-//
-//    @DeleteMapping("/{id}")
-//    public void deleteItem(@PathVariable(name = "id") Long id) {
-//        itemService.delete(id);
-//    }
-//
-//    @PutMapping("/{id}")
-//    public ItemDTO updateGenero(@PathVariable(name = "id") Long id,
-//                                  @RequestBody String novoTitulo) {
-//        return itemService.update(id, novoTitulo);
-//    }
 }
