@@ -1,20 +1,7 @@
-interface User {
-    name: string;
-    age: number;
-    occupation: string;
-    role?: undefined;
-}
-
-interface Admin {
-    name: string;
-    age: number;
-    role: string;
-    occupation?: undefined;
-}
-
-export type Person = User | Admin;
-
-export const persons: Person[] = [
+"use strict";
+Object.defineProperty(exports, "__esModule", { value: true });
+exports.logPerson = exports.persons = void 0;
+exports.persons = [
     {
         name: 'Max Mustermann',
         age: 25,
@@ -37,15 +24,15 @@ export const persons: Person[] = [
         role: 'World saver'
     }
 ];
-
-export function logPerson(person: Person) {
-    let additionalInformation: string | undefined;
+function logPerson(person) {
+    let additionalInformation;
     if (person.role) {
         additionalInformation = person.role;
-    } else {
+    }
+    else {
         additionalInformation = person.occupation;
     }
     console.log(` - ${person.name}, ${person.age}, ${additionalInformation}`);
 }
-
-persons.forEach(logPerson);
+exports.logPerson = logPerson;
+exports.persons.forEach(logPerson);
