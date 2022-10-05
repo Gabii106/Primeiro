@@ -1,0 +1,12 @@
+<div  (click)="showID()">
+<h3  [ngStyle]="{'display': (hero.status === 'morto') ?  'hidden' : 'none'}" style="display: inline; margin-right: 4px; color: gray;">✝</h3>
+
+<h3 [ngStyle]="
+{'font-style': (hero.status === 'morto') ? 'italic' : 'none', 'color' : (hero.status === 'morto') ? 'Gray' : 'Black'}
+" style="display: inline; margin-right: 2px;">
+    {{hero.heroName}}
+</h3>
+<small [ngStyle]="
+{'color': (hero.universe === 'DC') ? 'blue' : 'red'}
+">({{hero.universe}})</small>
+</div>

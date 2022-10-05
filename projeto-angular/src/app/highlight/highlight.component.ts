@@ -9,7 +9,6 @@ export class HighlightComponent implements OnInit {
 
   title = 'projeto-angular';
 
-
   constructor() { }
 
   ngOnInit(): void {
