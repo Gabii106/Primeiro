@@ -3,7 +3,8 @@ import { CommonModule } from '@angular/common';
 import { HeroesScreenComponent } from './heroes-screen/heroes-screen.component';
 import { HeroListItemComponent } from './hero-list-item/hero-list-item.component';
 import { HeroesFormComponent } from './heroes-form/heroes-form.component';
-import { ReactiveFormsModule } from '@angular/forms'
+import { ReactiveFormsModule } from '@angular/forms';
+
 
 
 @NgModule({
@@ -13,7 +14,7 @@ import { ReactiveFormsModule } from '@angular/forms'
     HeroesFormComponent
   ],
   imports: [
-    CommonModule,
+    CommonModule, 
     ReactiveFormsModule
   ],
   exports: [

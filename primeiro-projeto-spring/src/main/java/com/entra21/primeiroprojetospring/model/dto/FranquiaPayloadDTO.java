@@ -3,6 +3,6 @@ package com.entra21.primeiroprojetospring.model.dto;
 import lombok.Data;
 
 @Data
-public class FranquiaPayloadDTO{
+public class FranquiaPayloadDTO {
     private String nome;
 }

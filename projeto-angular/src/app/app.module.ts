@@ -9,6 +9,7 @@ import { HeroesModule } from './heroes/heroes.module';
 import { SizerComponent } from './sizer/sizer.component';
 import { ReactiveFormsModule } from '@angular/forms';
 import { FavoriteColorComponent } from './favorite-color/favorite-color.component';
+import { LivrariaModule } from './livraria/livraria.module';
 
 
 
@@ -26,6 +27,7 @@ import { FavoriteColorComponent } from './favorite-color/favorite-color.componen
   imports: [
     BrowserModule, 
     HeroesModule, 
+    LivrariaModule,
     ReactiveFormsModule
   ],
   providers: [],

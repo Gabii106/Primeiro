@@ -1,8 +1,7 @@
 package com.entra21.primeiroprojetospring.model.entity;
 
-import com.fasterxml.jackson.annotation.JsonProperty;
-import com.fasterxml.jackson.annotation.JsonSubTypes;
-import com.fasterxml.jackson.annotation.JsonTypeInfo;
+import com.entra21.primeiroprojetospring.model.ETipoItem;
+import com.entra21.primeiroprojetospring.model.dto.ItemDetalhesDTO;
 import lombok.Data;
 
 import javax.persistence.*;
@@ -12,7 +11,6 @@ import java.util.Set;
 @Entity
 @Inheritance(strategy = InheritanceType.JOINED)
 @Table(name = "item")
-
 public abstract class ItemEntity {
 
     @Column(name = "id")
@@ -32,16 +30,13 @@ public abstract class ItemEntity {
     @Column(name = "emprestado")
     private Boolean emprestado;
 
-    //Muitos (item) para um (franquia) - na franquia é o contrário
     @ManyToOne
     @JoinColumn(name = "id_franquia", referencedColumnName = "id")
     private FranquiaEntity franquia;
 
-    // Um (Item) para muitos (avaliações)
     @OneToMany(mappedBy = "item")
     private Set<AvaliacaoEntity> avaliacoes;
 
-    //Muitos (item) para muitos (generos)
     @ManyToMany
     @JoinTable(
             name = "genero_item",
@@ -50,5 +45,7 @@ public abstract class ItemEntity {
     )
     private Set<GeneroEntity> generos;
 
-    public abstract String getType();
+    public abstract ETipoItem getType();
+
+    public abstract ItemDetalhesDTO toDTO();
 }

@@ -1,8 +1,7 @@
 <h2 style="text-align: center; font-size: 45px;;">★ Heroes ★</h2>
 
 <div style="font-size: 22px; margin-left: 15px; margin-bottom: 20px;" *ngFor="let hero of heroes">
-   <app-hero-list-item [hero]="hero"></app-hero-list-item>
+    <app-hero-list-item [hero]="hero" (heroDelete)="remove($event)" (heroEdit)="edit($event)"></app-hero-list-item>
 </div>
-<app-heroes-form></app-heroes-form>
-
-<!-- <button type="button" (click)="">Novo herói</button> -->
+<button type="button" (click)="inserirHeroi()" *ngIf="!inserting">Novo heroi</button>
+<app-heroes-form [editingHero]="editingHero" *ngIf="inserting" (insertChange)="inserting=$event" (heroSave)="save($event)"></app-heroes-form>

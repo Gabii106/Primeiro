@@ -1,5 +1,6 @@
 package com.entra21.primeiroprojetospring.model.entity;
 
+
 import lombok.Data;
 
 import javax.persistence.*;
@@ -8,9 +9,10 @@ import javax.persistence.*;
 @Entity
 @Table(name = "genero")
 public class GeneroEntity {
-    @Column(name = "id")
+
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
+    @Column(name = "id")
     private Long id;
 
     @Column(name = "nome", nullable = false)

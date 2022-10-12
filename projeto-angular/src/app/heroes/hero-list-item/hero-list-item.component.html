@@ -1,12 +1,23 @@
-<div  (click)="showID()">
-<h3  [ngStyle]="{'display': (hero.status === 'morto') ?  'hidden' : 'none'}" style="display: inline; margin-right: 4px; color: gray;">✝</h3>
+<div >
+    <span  style="display: inline; margin-right: 4px; color: gray;" *ngIf="hero.deceased">✝</span>
+    <h3 [ngStyle]="(hero.deceased) ? {
+        'font-style': 'italic',
+        'text-decoration': 'line-through', 
+        'color': 'gray'} : {}" 
+        style="display: inline; margin-right: 2px;">
+        {{ hero.heroName }}
+    </h3>
+    <small [ngStyle]="
+        {'color': (hero.universe === 'DC') ? 'blue' : 'red'}
+    ">({{ hero.universe }})</small>
 
-<h3 [ngStyle]="
-{'font-style': (hero.status === 'morto') ? 'italic' : 'none', 'color' : (hero.status === 'morto') ? 'Gray' : 'Black'}
-" style="display: inline; margin-right: 2px;">
-    {{hero.heroName}}
-</h3>
-<small [ngStyle]="
-{'color': (hero.universe === 'DC') ? 'blue' : 'red'}
-">({{hero.universe}})</small>
+<small (click)="showID()" 
+style="cursor: pointer;" 
+title="Ver identidade secreta"> 👁️</small>
+<small (click)="onEdit()"
+style="cursor: pointer;" 
+title="Editar"> ✏️</small>
+<small (click)="onDelete()"
+style="cursor: pointer;" 
+title="Excluir"> 🗑️</small>
 </div>
